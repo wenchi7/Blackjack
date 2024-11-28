@@ -1,0 +1,123 @@
+body {
+    font-family: 'PMingLiU';
+  }
+main{
+max-width: 880px;
+margin-left: auto;
+margin-right: auto;
+}
+.game-table{
+    margin-top: 20px;
+    background-color: #6d8948;
+    border-radius: 30px;
+    padding:20px;
+    border: 20px  solid darkred ;
+    box-shadow: 3px 3px 2px black;
+}
+h1{
+    font-size: 2rem;
+    font-weight:200;
+}
+.deck{
+    display: flex;
+    justify-content: space-around;
+}
+.card {
+    width: 100px;
+    height: 150px;
+    background-color: aliceblue;
+    margin:3px;
+    border-radius: 4px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px black;
+    display: flex;
+    font-size: 4rem;
+    font-weight: 200;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  .card span{
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    font-size: 30px;
+  }
+.card img{
+  width:100%;
+  height:100%;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+footer{
+    margin-top:20px;
+    padding: 10px;
+    display:flex;
+    justify-content: center;   
+    
+}
+#button-hit{
+  background-color: pink;
+  color:black;
+  margin:15px; 
+  font-size: 20px;
+  font-weight: 500;
+  width: 80px;
+  height:50px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 2px black;
+  cursor: pointer;
+}
+#button-stand{
+      background-color: pink;
+      color:black;
+      margin:15px;
+      font-weight: 500;
+      font-size: 20px;
+      width: 80px;
+      height:50px;
+      border-radius: 15px;
+      box-shadow: 5px 5px 2px black;
+      cursor: pointer;
+   }
+#button-start{
+      background-color: blue;
+      color: white;
+      margin:15px;
+      font-size: 20px;
+      width: 150px;
+      height:50px;
+      border-radius: 15px;
+      box-shadow: 5px 5px 2px black;
+      }
+
+#button-hit:disabled, #button-stand:disabled{
+    background-color: lightgray ;
+    cursor: default ;
+}
+
+/*勝利效果*/
+h1::after{
+  position: absolute;
+  content:"勝";
+  color:red;
+  border:4px solid red;
+  border-radius: 50%;
+  font-size: 70px;
+  font-weight: 400;
+  padding: 10px;
+  margin:0px;
+  opacity: 0;
+  transform: scale(3);
+  transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.336);
+}
+
+.win h1::after{
+  opacity: .85;
+  transform: rotate(-15deg) scale(1);
+  z-index: 1000;
+}
